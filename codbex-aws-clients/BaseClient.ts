@@ -55,6 +55,20 @@ export class BaseClient {
             COMMAND_INPUT: JSON.stringify(commandInput)
         });
 
+        if (commandResult.exitCode != 0) {
+            const errorMessage = `[codbex-aws-client] Command execution failed:
+
+                Failed to executeCommand() with exitCode: ${commandResult.exitCode}
+
+                Failed to executeCommand() with errorOutput: ${commandResult.errorOutput}
+
+                Failed to executeCommand() with standardOutput: ${commandResult.standardOutput}
+            `;
+
+            console.error(errorMessage);
+            throw new Error(errorMessage);
+        }
+
         return JSON.parse(commandResult.standardOutput);
     }
 

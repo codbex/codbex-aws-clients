@@ -1,5 +1,20 @@
 {
     "guid": "codbex-aws-sdk",
     "dependencies": [],
-    "actions": []
+    "actions": [
+        {
+            "name": "Build TypeScript",
+            "commands": [
+                {
+                    "os": "unix",
+                    "command": "npm i"
+                },
+                {
+                    "os": "windows",
+                    "command": "cmd /c npm i"
+                }
+            ],
+            "registry": "true"
+        }
+    ]
 }

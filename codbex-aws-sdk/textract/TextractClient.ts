@@ -1,11 +1,11 @@
 import { AnalyzeDocumentCommandInput } from './CommandInputs';
 import { AnalyzeDocumentCommandOutput } from './CommandOutputs';
-import { BaseClient } from '../BaseClient';
+import { BaseClient, BaseConfiguration } from '../BaseClient';
 
 export class TextractClient extends BaseClient {
 
-    constructor() {
-        super('textract/handlers');
+    constructor(configuration?: BaseConfiguration) {
+        super('textract/handlers', configuration);
     }
 
     public analyzeDocument(commandInput: AnalyzeDocumentCommandInput): AnalyzeDocumentCommandOutput {

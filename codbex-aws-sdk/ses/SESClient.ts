@@ -1,11 +1,11 @@
 import { SendEmailCommandInput } from './CommandInputs';
 import { SendEmailCommandOutput } from './CommandOutputs';
-import { BaseClient } from '../BaseClient';
+import { BaseClient, BaseConfiguration } from '../BaseClient';
 
-export class TextractClient extends BaseClient {
+export class SESClient extends BaseClient {
 
-    constructor() {
-        super('ses/handlers');
+    constructor(configuration?: BaseConfiguration) {
+        super('ses/handlers', configuration);
     }
 
     public sendEmail(commandInput: SendEmailCommandInput): SendEmailCommandOutput {

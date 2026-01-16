@@ -1,0 +1,13 @@
+export interface ResponseMetadata {
+    httpStatusCode?: number;
+    requestId?: string;
+    extendedRequestId?: string;
+    cfId?: string;
+    attempts?: number;
+    totalRetryDelay?: number;
+}
+
+export interface SendEmailCommandOutput {
+    $metadata: ResponseMetadata;
+    MessageId?: string;
+}

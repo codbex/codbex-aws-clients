@@ -21,4 +21,13 @@ export interface SendEmailCommandInput {
             };
         };
     };
+    ReplyToAddresses?: string[];
+    ReturnPath?: string;
+    SourceArn?: string;
+    ReturnPathArn?: string;
+    Tags?: ({
+        Name: string;
+        Value: string;
+    })[];
+    ConfigurationSetName?: string;
 }

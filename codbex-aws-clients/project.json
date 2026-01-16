@@ -7,11 +7,11 @@
             "commands": [
                 {
                     "os": "unix",
-                    "command": "npm i"
+                    "command": "npm i --verbose"
                 },
                 {
                     "os": "windows",
-                    "command": "cmd /c npm i"
+                    "command": "cmd /c npm i --verbose"
                 }
             ],
             "registry": "true"

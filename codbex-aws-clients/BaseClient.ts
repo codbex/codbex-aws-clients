@@ -9,7 +9,7 @@ export interface BaseConfiguration {
 
 export class BaseClient {
 
-    private static readonly BASE_PATH = '/target/dirigible/repository/root/registry/public/codbex-aws-sdk';
+    private static readonly BASE_PATH = '/target/dirigible/repository/root/registry/public/codbex-aws-clients';
     private static readonly CODBEX_AWS_SDK_DEPENDENCIES_INSTALLED = 'CODBEX_AWS_SDK_DEPENDENCIES_INSTALLED';
 
     private readonly handlersPath;
@@ -32,22 +32,22 @@ export class BaseClient {
             });
 
             if (commandResult.exitCode != 0) {
-                console.error(`Install codbex-aws-sdk node dependencies errorOutput: ${commandResult.errorOutput}`);
-                console.error(`Install codbex-aws-sdk node dependencies standardOutput: ${commandResult.standardOutput}`);
-                throw new Error('Unable to install codbex-aws-sdk node dependencies, check the logs for more details');
+                console.error(`Install codbex-aws-clients node dependencies errorOutput: ${commandResult.errorOutput}`);
+                console.error(`Install codbex-aws-clients node dependencies standardOutput: ${commandResult.standardOutput}`);
+                throw new Error('Unable to install codbex-aws-clients node dependencies, check the logs for more details');
             }
 
             Configurations.set(BaseClient.CODBEX_AWS_SDK_DEPENDENCIES_INSTALLED, 'true');
-            console.log(`codbex-aws-sdk node dependnecies installed`);
+            console.log(`codbex-aws-clients node dependnecies installed`);
         } else {
-            console.log(`codbex-aws-sdk node dependnecies were already installed`);
+            console.log(`codbex-aws-clients node dependnecies were already installed`);
         }
 
     }
 
     protected executeCommand(extCommand: string, commandInput: any): any {
         const commandResult = Command.execute(extCommand, {
-            workingDirectory: `/target/dirigible/repository/root/registry/public/codbex-aws-sdk/${this.handlersPath}`,
+            workingDirectory: `/target/dirigible/repository/root/registry/public/codbex-aws-clients/${this.handlersPath}`,
         }, {
             AWS_ACCESS_KEY_ID: this.accessKeyId,
             AWS_SECRET_ACCESS_KEY: this.secretAccessKey,

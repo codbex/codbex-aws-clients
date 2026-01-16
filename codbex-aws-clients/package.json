@@ -1,4 +1,13 @@
 {
+  "name": "@codbex/codbex-aws-clients",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/codbex/codbex-aws-clients.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.970.0",
     "@aws-sdk/client-textract": "^3.962.0"
